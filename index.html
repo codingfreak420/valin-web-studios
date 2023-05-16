@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+
+
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    footer {
+      position: relative;
+      margin-top: 30px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: auto;
+      width: 100vw;
+      padding-top: 30px;
+      color: var(--lgreen);
+      background: linear-gradient(var(--grey), var(--black)12%)
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-content h3 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      line-height: 3rem;
+    }
+
+    .footer-content p {
+      max-width: 500px;
+      margin: 10px auto;
+      line-height: 28px;
+      font-size: 14px;
+      color: #cfd2d6;
+    }
+
+    .socials {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0 3rem 0;
+    }
+
+    .socials li {
+      margin: 0 10px;
+    }
+
+    .socials a {
+      text-decoration: none;
+
+      border: 1.1px solid green;
+      padding: 5px;
+
+      border-radius: 50%;
+      background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+      background-size: 200% auto;
+
+      color: #000;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: shine 3s ease alternate infinite;
+    }
+
+    }
+
+    .socials a i {
+      font-size: 1.1rem;
+      width: 20px;
+
+
+      transition: color .4s ease;
+
+    }
+
+    .socials a:hover i {
+      color: green;
+    }
+
+    .footer-bottom {
+      background: #000;
+      width: 100vw;
+      padding: 20px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      float: left;
+      font-size: 14px;
+      word-spacing: 2px;
+      text-transform: capitalize;
+    }
+
+    .footer-bottom p a {
+      color: green;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .footer-bottom span {
+      text-transform: uppercase;
+      opacity: .4;
+      font-weight: 200;
+    }
+
+    .footer-menu {
+      float: right;
+      text-align: center;
+
+    }
+
+    .footer-menu ul {
+      display: flex;
+
+    }
+
+    .footer-menu ul li {
+      padding-right: 10px;
+      display: block;
+    }
+
+    .footer-menu ul li a {
+
+      text-decoration: none;
+      background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+      background-size: 200% auto;
+
+      color: #000;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: shine 3s ease alternate infinite;
+    }
+    }
+
+    .footer-menu ul li a:hover {
+      color: green;
+    }
+
+    @media (max-width: 580px) {
+      .footer-bottom {
+        height: auto;
+      }
+
+      .footer-bottom p {
+        float: none;
+        margin-top: 15px
+      }
+
+      .footer-menu {
+        float: none;
+        display: inline-block;
+      }
+
+    }
+
+    @media (max-width:500px) {
+      .footer-menu ul {
+        display: flex;
+      }
+
+    }
+  </style>
+
+
+
+  <!-- App title -->
+  <title>Responsive Pure CSS Menu</title>
+
+  <!-- Link css file -->
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="navbar-brand"><img
+            src="https://raw.githubusercontent.com/codingfreak420/basecompany/main/2936BE7F-0836-46F7-9CF8-EE902D1DB1B4-PhotoRoom.png-PhotoRoom.png"
+            id="headerlogo" /></div>
+  <ul class="navbar-menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="navbar-toggle">
+    <span class="hamburger"></span>
+  </div>
+</nav>
+
+
+
+
+  <footer>
+    <div class="footer-content">
+      <a href='#' class='footerlogo'>
+        <h3><img
+            src='https://raw.githubusercontent.com/codingfreak420/basecompany/main/2936BE7F-0836-46F7-9CF8-EE902D1DB1B4-PhotoRoom.png-PhotoRoom.png'
+            id='footerlogo' /></h3>
+      </a>
+      <p>We are proud to serve our community.</p>
+      <ul class="socials">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>copyright &copy; <a href="#">Valin Web Development</a></p>
+      <div class="footer-menu">
+        <ul class="f-menu">
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
