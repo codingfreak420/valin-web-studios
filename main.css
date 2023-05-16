@@ -19,12 +19,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f8f8f8;
+  background-color: transparent;
   padding: 10px;
+  width: 100vw;
 }
 
-.navbar-brand {
-  font-weight: bold;
+.navbar-brand img{
+  height: 150px;
 }
 
 .navbar-menu {
@@ -32,10 +33,20 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 .navbar-menu li {
   margin-right: 10px;
+    background: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: alternate-reverse ease shine 3s infinite;
+
 }
 
 .navbar-toggle {
@@ -66,7 +77,6 @@
   
   text-align: center;
   overflow: hidden;
-  font-size: 40px
     font-family: 'Share Tech', sans-serif;
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     background-size: 200% auto;
@@ -76,11 +86,13 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 3s ease alternate infinite;
+  margin-left: 10%;
+    margin-right: 10%;
   }
 
 #myDiv {
-  height: 98vh;
-  width: 97vw;
+  height: 100vh;
+  width: 96vw;
   border: none;
   display: flex;
   align-items: center;
@@ -91,12 +103,14 @@
   font-size: 2.5rem;
 
 }
+ 
 
 .gradient-border {
   --borderWidth: 6px;
   background: black;
   position: relative;
   border-radius: var(--borderWidth);
+  margin-left: 2vw;
 }
 
 .gradient-border:after {
@@ -182,13 +196,15 @@ footer {
 
 .container {
   //background-color: #000;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 .wrapper {  
   display: flex;
   position: relative;
   
-  height: 80vh;
+  height: 100vh;
   
 /*   // all 800px elements + all 100vw elements + margins-right on all but the last element */
   width: calc( (800px * 8) + ((100vw - 20px) * 3) + (10px * 10) );
@@ -221,35 +237,59 @@ footer {
 }
 
 .thumbnail:nth-child(1) {
-    background-color: red;
+  background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/developmentstation.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(2) {
-    background-color: navy;
+    background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/animepostnet.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(3) {
-    background-color: gray;
+     background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/iwant2beninja.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(4) {
-    background-color: orange;
+     background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/maybei2couldbeninja.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(5) {
-    background-color: purple;
+     background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/mountainfest.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(6) {
-    background-color: black;
+     background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/newyorkoffice.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(7) {
-    background-color: green;
+     background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/spookyst.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(8) {
-    background-color: darkred;
+     background-color: white;
+    background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/why%20does%20this%20guy%20look%20like%20me.png?raw=true");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(9) {
@@ -266,6 +306,7 @@ footer {
 
 .thumbnail:last-child {
   margin-right: 0px;
+  background-color: purple;
 }
 
 
@@ -274,5 +315,4 @@ footer {
 /*   // the second extra '-20px' on here is just related to the fake-pinning and having space to the right side, when it happens */
   width: calc(100vw - 20px - 20px);
 }
-
 
