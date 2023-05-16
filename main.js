@@ -35,7 +35,7 @@ ScrollTrigger.create({
     trigger: ".container",
     start: "top top",
     // end: () => (container.scrollWidth - window.innerWidth),
-    end: "+=1000",
+    end: "+=2000",
     pin: true,
     anticipatePin: 1,
     scrub: scrubValue,
