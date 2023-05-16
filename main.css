@@ -315,4 +315,3 @@ footer {
 /*   // the second extra '-20px' on here is just related to the fake-pinning and having space to the right side, when it happens */
   width: calc(100vw - 20px - 20px);
 }
-
