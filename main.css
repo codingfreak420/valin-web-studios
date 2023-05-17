@@ -235,6 +235,14 @@ scrollbar {
   // opacity: 0.8;
 }
 
+.slidetext {rotate: -90deg; float: left; margin-left: -7vw; margin-top: 20vh; font-size: 200%;}
+
+.slidetext1 {rotate: -90deg; float: left; margin-left: -9vw; margin-top: 20vh; font-size: 200%;}
+.slidetext2 {rotate: -90deg; float: left; margin-left: -12vw; margin-top: 20vh; font-size: 200%;}
+.slidetext3 {rotate: -90deg; float: left; margin-left: -9vw; margin-top: 20vh; font-size: 200%;}
+.slidetext4 {rotate: -90deg; float: left; margin-left: -11vw; margin-top: 20vh; font-size: 200%;}
+.slidetext5 {rotate: -90deg; float: left; margin-left: -6vw; margin-top: 20vh; font-size: 200%;}
+.slidetext6 {rotate: -90deg; float: left; margin-left: -4vw; margin-top: 20vh; font-size: 200%;}
 
 
 .thumbnail:nth-child(1) {
@@ -249,6 +257,7 @@ scrollbar {
     background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/animepostnet.png?raw=true");
   background-size: cover;
   background-position: center;
+  color: var(--black)
 }
 
 .thumbnail:nth-child(3) {
@@ -263,6 +272,7 @@ scrollbar {
     background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/maybei2couldbeninja.png?raw=true");
   background-size: cover;
   background-position: center;
+  color: var(--black)
 }
 
 .thumbnail:nth-child(5) {
@@ -277,6 +287,7 @@ scrollbar {
     background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/newyorkoffice.png?raw=true");
   background-size: cover;
   background-position: center;
+  color: var(--black)
 }
 
 
@@ -293,6 +304,7 @@ scrollbar {
     background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/why%20does%20this%20guy%20look%20like%20me.png?raw=true");
   background-size: cover;
   background-position: center;
+  color: var(--black)
 }
 
 
@@ -306,6 +318,7 @@ scrollbar {
     background-image: url("https://cdn.midjourney.com/1a0b3634-31b6-4179-ad23-7bd28c5ea47b/0_2.png");
   background-size: cover;
   background-position: center;
+  color: var(--black)
 }
 
 .thumbnail:nth-child(11) {
