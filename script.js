@@ -27,97 +27,34 @@ window.addEventListener('resize', adjustTextSize);
 
 gsap.registerPlugin(ScrollTrigger);
 
-//const scrubValue = true;
-const scrubValue = 0.5;
-
-let container = document.querySelector('.container')
-
-// const scrollBar = gsap.to('.scrollbar', { x: () => { return window.innerWidth - (150 + 20) }, ease: "none" })
+const scrubValue = 2.0;
+const overlapAmount = 25; // Adjust this value to control the amount of overlap
 
 ScrollTrigger.create({
   trigger: ".container",
   start: "top top",
-  // end: () => (container.scrollWidth - window.innerWidth),
-  end: "+=3250",
+  end: () => "+=825" + (document.querySelector('.container').scrollWidth - window.innerWidth),
   pin: true,
-  anticipatePin: 1,
   scrub: scrubValue,
-  // animation: scrollBar,
-  invalidateOnRefresh: true,
-})
+});
 
 
 
 let thumbNails = gsap.utils.toArray(".thumbnail");
+let totalWidthToMove = 0;
 
 thumbNails.forEach((thumb, i) => {
-
-  if (thumb.classList.contains('fakePin')) {
-
-    function prevAll(element) {
-      var result = [];
-
-      while (element = element.previousElementSibling)
-        result.push(element);
-      return result;
-    }
-
-    // console.log(prevAll(thumb))
-
-    var totalWidthToMove;
-
-    function getTotalWidthToMove() {
-
-      totalWidthToMove = 0;
-
-      prevAll(thumb).forEach((thumbBefore, i) => {
-
-        let style = thumbBefore.currentStyle || window.getComputedStyle(thumbBefore);
-        let marginRight = parseInt(style.marginRight);
-
-        totalWidthToMove += thumbBefore.offsetWidth - 5;
-        console.log(totalWidthToMove);
-
-      });
-
-      return totalWidthToMove;
-
-    }
-    //getTotalWidthToMove();
-    // console.log(totalWidthToMove);
-
-    gsap.to(thumb, {
-      x: () => { return - getTotalWidthToMove() },
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".wrapper",
-        start: 'top top',
-        scrub: scrubValue,
-        invalidateOnRefresh: true,
-        end: () => "+=" + getTotalWidthToMove(),
-      }
-    });
-
-  }
-  else {
-
-    gsap.to(thumb, {
-      x: () => { return - (container.scrollWidth) },
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".wrapper",
-        start: 'top top',
-        scrub: scrubValue,
-        invalidateOnRefresh: true,
-        end: () => "+=" + (container.scrollWidth),
-      }
-    });
-
-  }
-
-  //console.log(thumb.offsetWidth)
-
+  totalWidthToMove += thumb.offsetWidth - overlapAmount; // Adjust the total width considering the overlap
+  gsap.to(thumb, {
+    x: () => -(thumb.offsetWidth - overlapAmount) * i, // Adjust the x value to stop at the left side
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".wrapper",
+      start: 'top top',
+      scrub: scrubValue,
+      invalidateOnRefresh: true,
+      end: () => "+=" + totalWidthToMove,
+    },
+  });
 });
-
-
 
