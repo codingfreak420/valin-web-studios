@@ -222,7 +222,7 @@ scrollbar {
   height: 100vh;
 
   /*   // all 800px elements + all 100vw elements + margins-right on all but the last element */
-  width: calc((800px * 8) + ((100vw - 20px) * 3) + (10px * 10));
+  width: 100%;
   /*   width: 400px; */
 
   padding: 0px 10px;
