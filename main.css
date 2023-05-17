@@ -14,7 +14,7 @@ html {
 }
 
 
-html,body {
+body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -212,43 +212,27 @@ scrollbar {
 
 
 .container {
-  //background-color: #000;
+  //background-color: #000; height: 100vh;
 }
 
 .wrapper {
   display: flex;
   position: relative;
-
-  height: 100vh;
-
-  /*   // all 800px elements + all 100vw elements + margins-right on all but the last element */
   width: 100%;
-  /*   width: 400px; */
-
-  padding: 0px 10px;
-
-  border-top: 10vh var(--black) solid;
-  border-bottom: 10vh var(--black) solid;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable snapping to each thumbnail */
+  height: 100vh;
 }
 
-.thumbnail {
-  display: inline-block;
-  float: left;
 
-  height: 80vh;
-
-  /*   // will become 800px in width because of the padding */
-  width: 400px;
-  color: white;
-
-  padding: 10px;
-  font-weight: 800;
-
-  border-radius: 10px;
-
-  margin-right: 40px;
-
-  // opacity: 0.8;
+.thumbnail { margin-top: 5vh;
+  flex: 0 0 auto; /* Ensure thumbnails don't grow or shrink */
+  width: 90vh; /* Set the width of each thumbnail to the viewport width */
+  height: 90vh; /* Set the height of each thumbnail to the viewport height */
+  scroll-snap-align: start; /* Snap each thumbnail to the start of the viewport */
+  background-size: cover;
+  background-position: center;
+             border-radius: 9px;
 }
 
 .slidetext {
@@ -256,7 +240,7 @@ scrollbar {
   position: absolute;
   color: var(--black);
   top: 50%;
-  left: -25%;
+  left: -75px;
   font-size: 25px;
   backdrop-filter: blur(5px);
   border-radius: 9px;
@@ -267,7 +251,7 @@ scrollbar {
   rotate: -90deg;
   position: absolute;
   top: 50%;
-  left: -33%;
+  left: -95px;
   font-size: 25px;
   backdrop-filter: blur(5px);
   border-radius: 9px;
@@ -278,7 +262,7 @@ scrollbar {
   rotate: -90deg;
   position: absolute;
   top: 50%;
-  left: -45%;
+  left: -130px;
   font-size: 25px;
   backdrop-filter: blur(5px);
   border-radius: 9px;
@@ -289,7 +273,7 @@ scrollbar {
   rotate: -90deg;
   position: absolute;
   top: 50%;
-  left: -35%;
+  left: -105px;
   font-size: 25px;
   backdrop-filter: blur(5px);
   border-radius: 9px;
@@ -300,7 +284,7 @@ scrollbar {
   rotate: -90deg;
   position: absolute;
   top: 50%;
-  left: -40%;
+  left: -115px;
   font-size: 25px;
   backdrop-filter: blur(5px);
   border-radius: 9px;
@@ -311,7 +295,7 @@ scrollbar {
   rotate: -90deg;
   position: absolute;
   top: 50%;
-  left: -22%;
+  left: -65px;
   font-size: 25px;
   backdrop-filter: blur(5px);
   border-radius: 9px;
@@ -322,7 +306,7 @@ scrollbar {
   rotate: -90deg;
   position: absolute;
   top: 50%;
-  left: -15%;
+  left: -35px;
   font-size: 25px;
   backdrop-filter: blur(5px);
   border-radius: 9px;
@@ -350,6 +334,7 @@ scrollbar {
   background-size: cover;
   background-position: center;
   color: var(--black);
+  
 }
 
 .thumbnail:nth-child(4) {
