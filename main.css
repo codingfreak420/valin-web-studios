@@ -1,4 +1,7 @@
-/* Theming */
+html {
+  height: 100%;
+  width: 100%;
+  background: var(--black)}
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
@@ -9,9 +12,10 @@
   --lgreen: #e1edbd;
 }
 
-/* Reset */
-* {
-  margin: auto;
+
+body {
+  overflow-x: hidden;
+  margin: 0;
   padding: 0;
 }
 
@@ -19,14 +23,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background-color: transparent; /* Make the navbar transparent */
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2; /* Ensure the navbar appears above the video */
   padding: 10px;
-  width: 100vw;
-  background-image: url("https://codingfreak420.github.io/valinwebdesigns/video-cropper.mp4");
 }
-
+.navbar-brand {margin-left: 40px;}
 .navbar-brand img{
-  height: 150px;
+  height: 150px; 
 }
 
 .navbar-menu {
@@ -34,9 +41,23 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: transparent;
 }
 
+.video-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+video {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover
+  object-position: center;
+  z-index: 1;
+  margin-top: -175px;
+  padding-bottom: 20px;
+}
 .navbar-menu li {
   margin-right: 10px;
     background: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
@@ -72,12 +93,13 @@
     cursor: pointer;
   }
 }
-
-
+.goalpic {height: 50vh; width: 50vw; margin-left: 3vw; border-radius: 9px;}
+.aiwomen {margin-right: 3vw; border-radius: 9px;}
 #myText {
   
   text-align: center;
   overflow: hidden;
+  font-size: 30px
     font-family: 'Share Tech', sans-serif;
     background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     background-size: 200% auto;
@@ -87,12 +109,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 3s ease alternate infinite;
-  margin-left: 10%;
-    margin-right: 10%;
+  margin-left: 3vw;
+  margin-right: 3vw;
   }
 
 #myDiv {
-  height: 100vh;
+  height: 98vh;
   width: 96vw;
   border: none;
   display: flex;
@@ -102,16 +124,16 @@
   font-family: 'Raleway';
   font-family: 'Raleway';
   font-size: 2.5rem;
+  margin-left: 2vw;
+  margin-right: 2vw;
 
 }
- 
 
 .gradient-border {
   --borderWidth: 6px;
   background: black;
   position: relative;
   border-radius: var(--borderWidth);
-  margin-left: 2vw;
 }
 
 .gradient-border:after {
@@ -150,29 +172,7 @@
 }
 
 
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  position: fixed;
-  z-index: 1000;
-  margin-left: 10px;
-}
-
-h1 {
-  font-size: 25px;
-}
-
-footer {
-  height: 10vh;
-  position: fixed;
-  bottom: 0;
-}
-
-.scrollbar {
+scrollbar {
   position: relative;
   border-radius: 25px;
   //padding: 2.5px;
@@ -197,8 +197,6 @@ footer {
 
 .container {
   //background-color: #000;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
 }
 
 .wrapper {  
@@ -213,8 +211,8 @@ footer {
   
   padding: 0px 10px;
   
-  border-top: 10vh white solid;
-  border-bottom: 10vh white solid; 
+  border-top: 10vh var(--black) solid;
+  border-bottom: 10vh var(--black) solid; 
 }
 
 .thumbnail {
@@ -224,7 +222,7 @@ footer {
   height: 80vh;
   
 /*   // will become 800px in width because of the padding */
-  width: 300px;
+  width: 400px;
   color: white;
 
   padding: 10px;
@@ -236,6 +234,8 @@ footer {
   
   // opacity: 0.8;
 }
+
+
 
 .thumbnail:nth-child(1) {
   background-color: white;
@@ -272,13 +272,15 @@ footer {
   background-position: center;
 }
 
-.thumbnail:nth-child(6) {
+.thumbnail:nth-child(6) { 
      background-color: white;
     background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/newyorkoffice.png?raw=true");
   background-size: cover;
   background-position: center;
 }
 
+
+  
 .thumbnail:nth-child(7) {
      background-color: white;
     background-image: url("https://github.com/codingfreak420/valinwebdesigns/blob/main/spookyst.png?raw=true");
@@ -293,12 +295,17 @@ footer {
   background-position: center;
 }
 
-.thumbnail:nth-child(9) {
-    background-color: teal;
+
+.thumbnail:nth-child(9) {background-color: white;
+    background-image: url("https://cdn.midjourney.com/54a64b8e-1d6e-41ec-9586-242cd92f999a/0_0.png");
+  background-size: cover;
+  background-position: center;
 }
 
-.thumbnail:nth-child(10) {
-    background-color: steelblue;
+.thumbnail:nth-child(10) {background-color: white;
+    background-image: url("https://cdn.midjourney.com/1a0b3634-31b6-4179-ad23-7bd28c5ea47b/0_2.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .thumbnail:nth-child(11) {
@@ -307,8 +314,13 @@ footer {
 
 .thumbnail:last-child {
   margin-right: 0px;
-  background-color: purple;
 }
+
+
+
+
+
+
 
 
 
@@ -316,3 +328,5 @@ footer {
 /*   // the second extra '-20px' on here is just related to the fake-pinning and having space to the right side, when it happens */
   width: calc(100vw - 20px - 20px);
 }
+
+footer img {height: 100px;}
