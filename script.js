@@ -33,7 +33,7 @@ const overlapAmount = 25; // Adjust this value to control the amount of overlap
 ScrollTrigger.create({
   trigger: ".container",
   start: "top top",
-  end: () => "+=825" + (document.querySelector('.container').scrollWidth - window.innerWidth),
+  end: () => "+=400" + (document.querySelector('.container').scrollWidth - window.innerWidth),
   pin: true,
   scrub: scrubValue,
 });
