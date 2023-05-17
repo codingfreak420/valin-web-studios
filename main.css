@@ -1,3 +1,5 @@
+
+
 html {
   height: 100%;
   width: 100%;
@@ -93,10 +95,10 @@ video {
     cursor: pointer;
   }
 }
-.goalpic {height: 50vh; width: 50vw; margin-left: 3vw; border-radius: 9px;}
-.aiwomen {margin-right: 3vw; border-radius: 9px;}
+.goalpic {height: 50vh; width: 47vw; margin-left: 3vw; border-radius: 9px;}
+.aiwomen {margin-right: 3vw; border-radius: 9px; height: 70%; width: 50vw;}
 #myText {
-  
+  width: 50vw;
   text-align: center;
   overflow: hidden;
   font-size: 30px
@@ -235,14 +237,7 @@ scrollbar {
   // opacity: 0.8;
 }
 
-.slidetext {rotate: -90deg; float: left; margin-left: -7vw; margin-top: 20vh; font-size: 200%;}
-
-.slidetext1 {rotate: -90deg; float: left; margin-left: -9vw; margin-top: 20vh; font-size: 200%;}
-.slidetext2 {rotate: -90deg; float: left; margin-left: -12vw; margin-top: 20vh; font-size: 200%;}
-.slidetext3 {rotate: -90deg; float: left; margin-left: -9vw; margin-top: 20vh; font-size: 200%;}
-.slidetext4 {rotate: -90deg; float: left; margin-left: -11vw; margin-top: 20vh; font-size: 200%;}
-.slidetext5 {rotate: -90deg; float: left; margin-left: -6vw; margin-top: 20vh; font-size: 200%;}
-.slidetext6 {rotate: -90deg; float: left; margin-left: -4vw; margin-top: 20vh; font-size: 200%;}
+.slidetext {rotate: -90deg; font-size: 25px; float: left; margin-top: 160px; margin-left: -6vw;}
 
 
 .thumbnail:nth-child(1) {
