@@ -225,10 +225,10 @@ scrollbar {
 }
 
 
-.thumbnail { margin-top: 5vh;
+.thumbnail { margin-top: 25vh;
   flex: 0 0 auto; /* Ensure thumbnails don't grow or shrink */
-  width: 90vh; /* Set the width of each thumbnail to the viewport width */
-  height: 90vh; /* Set the height of each thumbnail to the viewport height */
+  width: 400px; /* Set the width of each thumbnail to the viewport width */
+  height: 400px; /* Set the height of each thumbnail to the viewport height */
   scroll-snap-align: start; /* Snap each thumbnail to the start of the viewport */
   background-size: cover;
   background-position: center;
