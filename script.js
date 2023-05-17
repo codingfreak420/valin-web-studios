@@ -1,10 +1,3 @@
-const hamburger = document.querySelector('.navbar-toggle');
-const menu = document.querySelector('.navbar-menu');
-
-hamburger.addEventListener('click', function() {
-  menu.classList.toggle('active');
-});
-
 function adjustTextSize() {
   const div = document.getElementById('myDiv');
   const text = document.getElementById('myText');
@@ -22,6 +15,7 @@ function adjustTextSize() {
 window.addEventListener('resize', adjustTextSize);
 
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 //const scrubValue = true;
@@ -35,7 +29,7 @@ ScrollTrigger.create({
     trigger: ".container",
     start: "top top",
     // end: () => (container.scrollWidth - window.innerWidth),
-    end: "+=2000",
+    end: "+=3250",
     pin: true,
     anticipatePin: 1,
     scrub: scrubValue,
@@ -72,7 +66,7 @@ thumbNails.forEach((thumb, i) => {
         let style = thumbBefore.currentStyle || window.getComputedStyle(thumbBefore);      
         let marginRight = parseInt(style.marginRight);
 
-        totalWidthToMove += thumbBefore.offsetWidth - 100;
+        totalWidthToMove += thumbBefore.offsetWidth - 35;
         console.log(totalWidthToMove);
 
       });    
