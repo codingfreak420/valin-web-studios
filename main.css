@@ -305,8 +305,23 @@ span {
   opacity: .1;
 }
 
+.scrollbar {
+  position: relative;
+  border-radius: 25px;
+  //padding: 2.5px;
+  color: white;
+  background-color: #333;
+  width: 150px;
+  height: 10px;
+  top: calc(5vh + 5px);
+  left: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar {
   display: none;
+}
 /*slideshow*/
 .container {
   background-color: #000; 
