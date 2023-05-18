@@ -1,126 +1,70 @@
-html {
-  height: 100%;
-  width: 100%;
-  background: var(--black)
-}
-
+/* Theming */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
 :root {
   --green: #02b345;
   --black: #070304;
   --grey: #36383F;
   --lgreen: #e1edbd;
 }
-
+html
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 200;
+  letter-spacing: -.05em;
+}
 
 body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
+  background-color: var(--black);
+  font-family: "Poppins", sans-serif;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header */
+.header {
   background-color: transparent;
-  /* Make the navbar transparent */
-  position: relative;
+  box-shadow: 1px 1px 5px 0px var(--grey);
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  /* Ensure the navbar appears above the video */
-  padding: 10px;
+  width: 100%;
 }
 
-.navbar-brand {
-  margin-left: 40px;
+/* Logo */
+.logo {
+  display: inline-block;
+  color: var(--green);
+  font-size: 60px;
+  margin-left: 10px;
+
 }
 
-.navbar-brand img {
-  height: 150px;
+.logo img {
+  height: 10vh;
 }
 
-.navbar-menu {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.video-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
-video {
-  width: 100vw;
+/* Nav menu */
+.nav {
+  width: 100%;
   height: 100%;
-  object-fit: cover object-position: center;
-  z-index: 1;
-  margin-top: -175px;
-  padding-bottom: 20px;
-}
-
-.navbar-menu li {
-  margin-right: 10px;
-  background: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  background-size: 200% auto;
-  color: #000;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: alternate-reverse ease shine 3s infinite;
-
-}
-
-.navbar-toggle {
-  display: none;
-  /* Initially hide the hamburger menu */
-}
-
-.hamburger {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin-bottom: 5px;
-}
-
-@media (max-width: 768px) {
-  .navbar-menu {
-    display: none;
-    /* Hide the menu items on smaller screens */
-  }
-
-  .navbar-toggle {
-    display: block;
-    /* Display the hamburger menu */
-    cursor: pointer;
-  }
-}
-
-.firstsection {
-  height: 100vh;
-}
-
-.goalpic {
-  height: 46vw;
-  width: 46vw;
-  margin-left: 1vw;
-  border-radius: 9px;
-  float: left;
-}
-
-#myText1 {
-  width: 80%;
-  text-align: center;
+  position: fixed;
+  background-color: transparent;
   overflow: hidden;
-  font-family: 'Share Tech', sans-serif;
+}
+
+.menu a,
+.menu p {
+  display: block;
+  padding: 30px;
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   background-size: 200% auto;
   color: #000;
@@ -131,18 +75,194 @@ video {
   animation: shine 3s ease alternate infinite;
 }
 
+.menu a:hover {
+  background-color: var(--grey);
+}
+
+.nav {
+  max-height: 0;
+  transition: max-height .5s ease-out;
+}
+
+/* Sub nav */
+.subnav-content {
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s ease alternate infinite;
+  width: 100%;
+  z-index: 1;
+  padding: 20px 0;
+  display: none;
+}
+.subnavbtn {font-size: 15px;}
+.subnav-content a {
+  color: var(--black);
+  text-decoration: none;
+  padding: 0;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+/* Menu Icon */
+
+.hamb {
+  cursor: pointer;
+  float: right;
+  padding: 40px 20px;
+}
+
+
+.hamb-line {
+  background: var(--green);
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  background: var(--green);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+
+.hamb-line::before {
+  top: 5px;
+}
+
+.hamb-line::after {
+  top: -5px;
+}
+
+
+.side-menu {
+  display: none;
+}
+
+/* Toggle menu icon */
+
+.side-menu:checked~nav {
+  max-height: 100%;
+}
+
+.side-menu:checked~.hamb .hamb-line {
+  background: transparent;
+}
+
+.side-menu:checked~.hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+
+}
+
+.side-menu:checked~.hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+
+/* Responsiveness */
+
+@media (min-width: 768px) {
+  .nav {
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+    background-color: transparent;
+
+  }
+
+  .menu li {
+    float: left;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+    color: var(--grey);
+
+  }
+
+  .hamb {
+    display: none;
+  }
+
+  /* Sub nav */
+  .subnav-content {
+    padding: 20px 0;
+    display: none;
+    background-color: transparent;
+  }
+
+  .subnav-content a {
+    color: white;
+  }
+
+}
+
+/*video*/
+.intro {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  margin-top: -14vh;
+  left: 0;
+  object-fit: cover;
+}
+
+h1 {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+
+#homemain {
+  font-family: 'VT323', monospace;
+  width: 70vw;
+  border: none;
+}
+
+h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  animation: typing 1.5s steps(30, end) forwards, blinking 1s infinite;
+  background-color: transparent;
+  color: var(--green);
+  margin-top: 70vh;
+  font-size: 5vw;
+}
+
+
+
 #myDiv1 {
-  height: 46vw;
-  width: 46vw;
+  height: 50vh;
+  width: 96vw;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
   font-family: 'Raleway';
-  font-family: 'Raleway';
-  margin-right: 1vw;
-  float: right;
+  float: none;
+  margin-top: 9vh;
+  margin-left: 1vw;
 }
 
 .gradient-border1 {
@@ -167,52 +287,29 @@ video {
 }
 
 
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
+p {
+  font-size: clamp(20px, 5vw, 40px);
+  padding: 10vh 5%;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s ease alternate infinite;
 }
 
 
-scrollbar {
-  position: relative;
-  border-radius: 25px;
-  //padding: 2.5px;
-  color: white;
-  background-color: #333;
-  width: 150px;
-  height: 10px;
-  top: calc(5vh + 5px);
-  left: 10px;
-  text-align: center;
-  cursor: pointer;
-}
-
-::-webkit-scrollbar {
-  display: none;
+span {
+  opacity: .1;
 }
 
 
-
-
-
-
+/*slideshow*/
 .container {
-  //background-color: #000; height: 100vh;
+  background-color: #000; 
+  height: 50vh; 
 }
 
 .wrapper {
@@ -221,11 +318,11 @@ scrollbar {
   width: 100%;
   overflow-x: scroll; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Enable snapping to each thumbnail */
-  height: 100vh;
+  height: 50vh;
 }
 
 
-.thumbnail { margin-top: 25vh;
+.thumbnail { margin-top: 1vh;
   flex: 0 0 auto; /* Ensure thumbnails don't grow or shrink */
   width: 400px; /* Set the width of each thumbnail to the viewport width */
   height: 400px; /* Set the height of each thumbnail to the viewport height */
@@ -405,80 +502,61 @@ scrollbar {
 
 
 
-.secondsection {
-  height: 100vh;
-}
-#myText2 {
-  width: 80%;
-  text-align: center;
-  overflow: hidden; 
-  font-family: 'Share Tech', sans-serif;
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  background-size: 200% auto;
-  color: #000;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s ease alternate infinite;
-}
-
-#myDiv2 {
-  height: 46vw;
-  width: 46vw;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  font-family: 'Raleway';
-  font-family: 'Raleway';
-  margin-left: 1vw;
-  float: left;
-}
-
-.gradient-border2 {
-  --borderWidth: 6px;
-  background: black;
-  position: relative;
-  border-radius: var(--borderWidth);
-}
-
-.gradient-border2:after {
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
-  background-size: 300% 300%;
-}
-
-.aigirl {
-  height: 46vw;
-  width: 46vw;
-  margin-right: 1vw;
-  border-radius: 9px;
-  float: right;
+/*footer*/
+.footerlogo img {
+  height: 10vh;
 }
 
 
 
 
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
 
+  50% {
+    background-position: 100% 50%;
+  }
 
-
-
-
-.full {
-  /*   // the second extra '-20px' on here is just related to the fake-pinning and having space to the right side, when it happens */
-  width: calc(100vw - 20px - 20px);
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-footer img {
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blinking {
+  0% {
+    border-right-color: transparent
+  }
+
+  50% {
+    border-right-color: var(--green)
+  }
+
+  100% {
+    border-right-color: transparent
+  }
+}
+
+
+/*footer*/
+#footerlogo {
   height: 100px;
 }
+br {height: 1vw}
