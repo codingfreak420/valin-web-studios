@@ -1,39 +1,49 @@
-function adjustTextSize() {
-  const div1 = document.getElementById('myDiv1');
-  const text1 = document.getElementById('myText1');
-  const div2 = document.getElementById('myDiv2');
-  const text2 = document.getElementById('myText2');
+let paragraphs = [...document.querySelectorAll('p')];
+let spans =[];
 
-  const adjustFontSize = (div, text) => {
-    const maxHeight = div.clientHeight;
-    let fontSize = 150; // Initial font size
-    text.style.fontSize = fontSize + 'px';
+paragraphs.forEach(paragraph => {
+  let htmlString = '';
+  let pArray = paragraph.textContent.split('');
+  for(let i = 0; i< pArray.length; i++){
+    htmlString += `<span>${pArray[i]}</span>`;
+  }
+ paragraph.innerHTML = htmlString; 
+  
+})
 
-    while (text.offsetHeight > maxHeight && fontSize > 0) {
-      fontSize--;
-      text.style.fontSize = fontSize + 'px';
+spans = [...document.querySelectorAll('span')];
+
+function revealSpans(){
+  for(let i = 0; i < spans.length; i++){
+    if(spans[i].parentElement.getBoundingClientRect().top < window.innerHeight / 2){
+      let {left, top} = spans[i].getBoundingClientRect();
+      top = top - (window.innerHeight * .5);
+      let opacityValue = 1 - ((top * .01) + (left * 0.001)) < 0.1 ? 0.1 : 1 - ((top * .01) + (left * 0.001)).toFixed(3);
+      opacityValue = opacityValue > 1 ? 1 : opacityValue.toFixed(3);
+      spans[i].style.opacity = opacityValue;
     }
-  };
-
-  adjustFontSize(div1, text1);
-  adjustFontSize(div2, text2);
+  }
 }
 
-window.addEventListener('resize', adjustTextSize);
+window.addEventListener('scroll', () => {
+  revealSpans()
+})
+revealSpans()
 
 
 
 
 
-gsap.registerPlugin(ScrollTrigger);
 
-const scrubValue = 2.0;
-const overlapAmount = 25; // Adjust this value to control the amount of overlap
+  gsap.registerPlugin(ScrollTrigger);
+
+const scrubValue = .5;
+const overlapAmount = 5; // Adjust this value to control the amount of overlap
 
 ScrollTrigger.create({
   trigger: ".container",
   start: "top top",
-  end: () => "+=400" + (document.querySelector('.container').scrollWidth - window.innerWidth),
+  end: () => "+=4000vw" + (document.querySelector('.container').scrollWidth - window.innerWidth),
   pin: true,
   scrub: scrubValue,
 });
@@ -57,4 +67,3 @@ thumbNails.forEach((thumb, i) => {
     },
   });
 });
-
